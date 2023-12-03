@@ -1,8 +1,9 @@
-ARG BUILD_FROM=alpine:latest
+ARG BUILD_FROM=alpine:3.18.5
 
 FROM $BUILD_FROM
 
-RUN apk --update --no-cache add bash nfs-utils && \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
+    apk --update --no-cache add bash nfs-utils libcap-utils && \
                                                   \
     # remove the default config files
     rm -v /etc/idmapd.conf /etc/exports

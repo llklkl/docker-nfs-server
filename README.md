@@ -2,6 +2,10 @@
 
 A lightweight, robust, flexible, and containerized NFS server.
 
+## 改动
++ 替换清华镜像源
++ 添加capsh
+
 ## Why?
 
 This is the only containerized NFS server that offers **all** of the following features:
