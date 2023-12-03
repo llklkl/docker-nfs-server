@@ -273,8 +273,8 @@ is_kernel_module_loaded() {
 
 is_granted_linux_capability() {
 
-  if capsh --print | grep -Eq "^Current: = .*,?${1}(,|$)"; then
-    return 0
+  if $(capsh --supports=${1}); then
+     return 0
   fi
 
   return 1
@@ -300,7 +300,7 @@ assert_kernel_mod() {
     return
   fi
 
-  if [[ ! -d /lib/modules ]] || ! is_granted_linux_capability 'sys_module'; then
+  if [[ ! -d /lib/modules ]] || ! is_granted_linux_capability 'cap_sys_module'; then
     bail "$module module is not loaded in the Docker host's kernel (try: modprobe $module)"
   fi
 

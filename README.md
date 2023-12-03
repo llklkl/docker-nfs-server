@@ -5,6 +5,8 @@ A lightweight, robust, flexible, and containerized NFS server.
 ## 改动
 + 替换清华镜像源
 + 添加capsh
++ 修复entrypoint.sh capsh判断逻辑
++ 修复entrypoint.sh启动失败
 
 ## Why?
 
