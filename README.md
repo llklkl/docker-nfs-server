@@ -7,6 +7,8 @@ A lightweight, robust, flexible, and containerized NFS server.
 + 添加capsh
 + 修复entrypoint.sh capsh判断逻辑
 + 修复entrypoint.sh启动失败
++ 修复“2: Unsupported version”错误
+
 
 ## Why?
 
